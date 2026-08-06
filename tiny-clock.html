@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Tiny Clock | Jett Kafka</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<nav class="nav">
+<a class="brand" href="index.html">Jett Kafka</a>
+<div class="nav-links">
+<a href="index.html#featured">Featured</a>
+<a href="index.html#timeline">Timeline</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<p style="margin-top:22px"><a href="index.html">← Back to portfolio</a></p>
+<section class="hero">
+<div>
+<p class="eyebrow">2024 · I2C + Real-Time Clock</p>
+<h1>Tiny Clock</h1>
+<p class="lead">Built an I2C scanner and RTC test platform using an Arduino Nano, DS1307 real-time clock, TC74 temperature sensor, and crystal time base.</p>
+<div class="tags"><span class="tag">I2C</span><span class="tag">Arduino Nano</span><span class="tag">DS1307 RTC</span><span class="tag">TC74</span><span class="tag">Crystal Oscillator</span></div>
+</div>
+<figure class="hero-image featured-proof">
+<img alt="the 32.768 kHz tuning-fork crystal used as the accurate time base for the RTC system." src="assets/projects/tiny-clock/v15-visual-01.png"/>
+<figcaption class="caption">The image above shows the 32.768 kHz tuning-fork crystal used as the accurate time base for the RTC system.</figcaption>
+</figure>
+</section>
+<section class="section" id="video">
+<p class="eyebrow">Video Demonstration</p>
+<h2>Working demonstration</h2>
+<p class="lead">The project video shows the physical build, behaviour, and final result.</p>
+<a class="video-card video-link" href="https://youtu.be/z9cTBrgB4yQ" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for Tiny Clock" src="https://img.youtube.com/vi/z9cTBrgB4yQ/hqdefault.jpg"/>
+<span class="play-badge">▶ Watch on YouTube</span>
+</div>
+</a>
+</section> <section class="section">
+<div class="two-col">
+<div>
+<p class="eyebrow">Project Overview</p>
+<h2>Use I2C to identify and communicate with timekeeping hardware.</h2>
+<p class="lead">The project focused on understanding the I2C bus: scanning addresses, detecting connected devices, and preparing the RTC system used in the next clock prototype.</p>
+</div>
+<div class="panel">
+<h3>What I built</h3>
+<ul class="evidence-list"><li>I2C bus scanner firmware</li><li>DS1307 RTC breakout integration</li><li>TC74 temperature sensor detection</li><li>Serial monitor output for device addresses</li></ul>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">Technical Skills</p>
+<h2>Skills demonstrated</h2>
+<div class="project-summary-grid skill-count-5">
+<div class="panel"><h3>I2C communication</h3><p>Applied directly in the design, build, debugging, or final integration of the project.</p></div>
+<div class="panel"><h3>Address scanning</h3><p>Applied directly in the design, build, debugging, or final integration of the project.</p></div>
+<div class="panel"><h3>RTC hardware</h3><p>Applied directly in the design, build, debugging, or final integration of the project.</p></div>
+<div class="panel"><h3>Serial debugging</h3><p>Applied directly in the design, build, debugging, or final integration of the project.</p></div>
+<div class="panel"><h3>Embedded C++</h3><p>Applied directly in the design, build, debugging, or final integration of the project.</p></div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">Build Story</p>
+<h2>I2C timekeeping components and prototype</h2>
+<div class="visual-narrative">
+<div class="visual-step">
+<div class="visual-copy">
+<h3>RTC pinout</h3>
+<p>The image to the right shows the I2C transaction graphic, where the bus sends a start bit, address, acknowledge bits, data bytes, and a stop bit.</p>
+</div>
+<figure class="image-card">
+<img alt="the I2C transaction graphic, where the bus sends a start bit, address, acknowledge bits, data bytes, and a stop bit." src="assets/projects/tiny-clock/v15-visual-02.png"/>
+</figure>
+</div>
+<div class="visual-step">
+<div class="visual-copy">
+<h3>I2C communication</h3>
+<p>The image to the right shows the DS1307 RTC operating circuit, including the crystal, backup battery, pull-up resistors, and I2C data/clock lines.</p>
+</div>
+<figure class="image-card">
+<img alt="the DS1307 RTC operating circuit, including the crystal, backup battery, pull-up resistors, and I2C data/clock lines." src="assets/projects/tiny-clock/v15-visual-03.png"/>
+</figure>
+</div>
+<div class="visual-step">
+<div class="visual-copy">
+<h3>Crystal time base</h3>
+<p>The image to the right shows the TC74 temperature sensor, a second I2C-compatible device detected by the bus scanner.</p>
+</div>
+<figure class="image-card">
+<img alt="the TC74 temperature sensor, a second I2C-compatible device detected by the bus scanner." src="assets/projects/tiny-clock/v15-visual-04.png"/>
+</figure>
+</div>
+<div class="visual-step">
+<div class="visual-copy">
+<h3>I2C sensor device</h3>
+<p>The image to the right shows the Tiny Clock breadboard prototype, where the Arduino Nano scans the I2C bus and detects the RTC and temperature sensor.</p>
+</div>
+<figure class="image-card">
+<img alt="the Tiny Clock breadboard prototype, where the Arduino Nano scans the I2C bus and detects the RTC and temperature sensor." src="assets/projects/tiny-clock/v15-visual-05.jpeg"/>
+</figure>
+</div>
+<div class="visual-step">
+<div class="visual-copy">
+<h3>RTC wiring setup</h3>
+<p>The image to the right shows the DS1307 RTC pinout, including the crystal pins, backup battery input, square-wave output, and I2C connections.</p>
+</div>
+<figure class="image-card">
+<img alt="the DS1307 RTC pinout, including the crystal pins, backup battery input, square-wave output, and I2C connections." src="assets/projects/tiny-clock/v15-visual-06.png"/>
+</figure>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="note">
+<strong>Portfolio takeaway.</strong> Tiny Clock demonstrates more than a completed class task: it shows physical implementation, technical explanation, and the ability to turn a concept into working hardware.
+    </div>
+</section>
+<section class="section project-nav-section">
+<div class="project-nav-actions">
+<a class="project-nav-btn primary" href="rtc-prototype.html">Next project → <span>Real Time Clock Prototype</span></a>
+<button class="project-nav-btn" onclick="openProjectPicker()" type="button">All projects</button>
+<a class="project-nav-btn" href="index.html">Home page</a>
+</div>
+</section>
+<div aria-hidden="true" class="project-picker-modal" id="projectPicker">
+<div class="project-picker-backdrop" onclick="closeProjectPicker()"></div>
+<div aria-label="All projects" aria-modal="true" class="project-picker-panel" role="dialog">
+<button class="project-picker-close" onclick="closeProjectPicker()" type="button">×</button>
+<p class="eyebrow">All Projects</p>
+<h2>Jump to a project</h2>
+<div class="project-picker-grid"><a href="capacitor-visualizer.html"><span>01</span>Capacitor Visualizer</a><a href="two-bit-adder.html"><span>02</span>2-Bit Adder</a><a href="counting-circuit.html"><span>03</span>Counting Circuit</a><a href="r2r-dac.html"><span>04</span>Digital-to-Analog Conversion</a><a href="555-time-machine.html"><span>05</span>555 Time Machine</a><a href="multi-bit-memory.html"><span>06</span>Multi-Bit Memory Register</a><a href="binary-game.html"><span>07</span>Binary Game</a><a href="tmp36-thermometer.html"><span>08</span>TMP36 Arduino Thermometer</a><a href="tiny-clock.html"><span>09</span>Tiny Clock I2C Scanner</a><a href="rtc-prototype.html"><span>10</span>Real Time Clock Prototype</a><a href="load-cell-scale.html"><span>11</span>Arduino Load Cell Scale</a><a href="charlieclock.html"><span>12</span>CharlieClock</a><a href="chump.html"><span>13</span>CHUMP Computer</a><a href="lidar.html"><span>14</span>2D Servo LiDAR Mapper</a><a href="traffic-light.html"><span>15</span>AVR Assembly Traffic Light</a><a href="sar.html"><span>16</span>SAR ADC</a><a href="fm.html"><span>17</span>Superheterodyne FM Radio</a><a href="double-dabble.html"><span>18</span>Double Dabble</a><a href="gray-code.html"><span>19</span>4517 Gray Code</a></div>
+</div>
+</div>
+</main>
+<div class="footer">Jett Kafka · Engineering Project Portfolio</div>
+<script data-project-nav="true">
+function openProjectPicker(){
+  document.getElementById('projectPicker')?.classList.add('open');
+}
+function closeProjectPicker(){
+  document.getElementById('projectPicker')?.classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeProjectPicker();
+});
+</script></body>
+</html>

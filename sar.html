@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   Successive Approximation Register ADC | Jett Kafka
+  </title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<nav class="nav">
+<a class="brand" href="index.html">
+     Jett Kafka
+    </a>
+<div class="nav-links">
+<a href="index.html#featured">
+      Featured
+     </a>
+<a href="index.html#timeline">
+      Timeline
+     </a>
+<a href="index.html#projects">
+      Projects
+     </a>
+<a href="index.html#contact">
+      Contact
+     </a>
+</div>
+</nav>
+</header>
+<main>
+<p style="margin-top:22px">
+<a href="index.html">
+     ← Back to portfolio
+    </a>
+</p>
+<section class="hero">
+<div>
+<p class="eyebrow">
+      2025 · Analog &amp; Mixed Signal · Digital Logic
+     </p>
+<h1>
+      Successive Approximation Register ADC
+     </h1>
+<p class="lead">
+      A mixed-signal project that builds a successive approximation analog-to-digital converter using clocked digital logic, an R/2R DAC, comparator feedback, and oscilloscope validation.
+     </p>
+<div class="tags">
+<span class="tag">
+       SAR ADC
+      </span>
+<span class="tag">
+       Mixed Signal
+      </span>
+<span class="tag">
+       R/2R DAC
+      </span>
+<span class="tag">
+       Comparator
+      </span>
+<span class="tag">
+       Oscilloscope
+      </span>
+<span class="tag">
+       Digital Logic
+      </span>
+<span class="tag">
+       Analog Electronics
+      </span>
+</div>
+</div>
+<figure class="image-card">
+<img alt="Final labelled SAR ADC breadboard build." src="assets/projects/sar/hero.png"/>
+<figcaption class="caption">
+      Final labelled SAR ADC breadboard build.
+     </figcaption>
+</figure>
+<div class="note" style="border-left:3px solid #cbd5e1;padding:10px 14px;margin:16px 0;background:#f8fafc;">
+<strong>
+      Engineering note.
+     </strong>
+     This project was built in stages rather than all at once. Separating the clock, DAC, and completed SAR implementation made debugging easier and helped verify each subsystem before integration.
+    </div>
+</section>
+<section class="section" id="video">
+<p class="eyebrow">
+     Video Demonstration
+    </p>
+<h2>
+     Measured conversion behavior
+    </h2>
+<p class="lead">
+     The demonstration shows the circuit operating as a physical build, with the measured conversion behavior visible during testing.
+    </p>
+<a class="video-card video-link" href="https://www.youtube.com/watch?v=bZnF5J4DpSA" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for Successive Approximation Register ADC" src="https://img.youtube.com/vi/bZnF5J4DpSA/hqdefault.jpg"/>
+<span class="play-badge">
+       ▶ Watch on YouTube
+      </span>
+</div>
+</a>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Engineering Challenge
+    </p>
+<div class="two-col">
+<div>
+<h2>
+       Convert an analog voltage into a digital representation.
+      </h2>
+<p class="lead">
+       The goal of an ADC is to take a continuously varying voltage and produce a digital value that represents it. A successive approximation ADC does this by testing one digital bit at a time and comparing the analog equivalent of that guess against the input voltage.
+      </p>
+<p>
+       This project is valuable because it sits between analog electronics and digital logic. The circuit needs an analog comparator, a digital register sequence, a DAC estimate, and a clocked decision process to work together.
+      </p>
+</div>
+<div class="panel">
+<p>
+<strong>
+        Core conversion loop:
+       </strong>
+</p>
+<ol>
+<li>
+        Try a digital estimate.
+       </li>
+<li>
+        Convert that estimate back into analog voltage using the R/2R DAC.
+       </li>
+<li>
+        Compare the DAC output to the unknown input voltage.
+       </li>
+<li>
+        Keep or reject the bit and move to the next one.
+       </li>
+</ol>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     System Overview
+    </p>
+<h2>
+     The ADC as a feedback system
+    </h2>
+<p class="lead">
+     The SAR ADC operates as a closed feedback loop. A register proposes a digital value, the R/2R ladder converts that value into an analog voltage, and the comparator determines whether the estimate is above or below the input signal.
+    </p>
+<p>
+     The diagrams below show the relationship between the register, DAC, comparator, and clocked control logic.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="Block diagram of the SAR ADC showing register/clock, R/2R DAC, comparator, and sample-and-hold interaction." src="assets/projects/sar/block.png"/>
+<figcaption class="caption">
+       Block diagram showing register/clock, R/2R DAC, comparator, and sample-and-hold interaction.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Full SAR ADC schematic / breadboard reference." src="assets/projects/sar/schematic.png"/>
+<figcaption class="caption">
+       Full SAR ADC schematic/breadboard reference.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Prototype &amp; Circuit Build
+    </p>
+<h2>
+     Building the ADC in stages
+    </h2>
+<p class="lead">
+     The circuit was not just one simple breadboard. It was built from multiple functional stages, including clock/control logic, a DAC ladder, comparator feedback, and the final assembled ADC circuit.
+    </p>
+<p>
+     Because these images are breadboard/final-build evidence, they do not need long explanations underneath every photo. The surrounding text explains why the build progression matters.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="Breadboard prototype for the oscillator / clock portion of the SAR ADC project." src="assets/projects/sar/clock.png"/>
+<figcaption class="caption">
+       Breadboard prototype for the oscillator/clock portion of the ADC.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Larger breadboard circuit build used during SAR ADC development." src="assets/projects/sar/circuit.png"/>
+<figcaption class="caption">
+       Larger breadboard circuit used during SAR ADC development.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Final labelled SAR ADC breadboard build." src="assets/projects/sar/final.png"/>
+<figcaption class="caption">
+       Final labelled SAR ADC breadboard build.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     R/2R DAC
+    </p>
+<h2>
+     Turning a digital guess into an analog voltage
+    </h2>
+<p class="lead">
+     The R/2R ladder is central to the SAR process because it converts the current digital guess into an analog voltage. The comparator can then decide whether that analog estimate is above or below the unknown input voltage.
+    </p>
+<p>
+     This is what makes the project mixed-signal: the digital part proposes binary values, while the analog part evaluates the voltage consequences of those values.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="R/2R ladder representation used for digital-to-analog estimation in the SAR process." src="assets/projects/sar/r2r.png"/>
+<figcaption class="caption">
+       R/2R ladder representation used for digital-to-analog estimation.
+      </figcaption>
+</figure>
+<div class="panel">
+<p>
+<strong>
+        Why it matters:
+       </strong>
+       without the DAC stage, the digital register would have no way to compare its guess to the analog input.
+      </p>
+<p>
+       The ladder acts as the bridge between the digital and analog halves of the converter.
+      </p>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Oscilloscope Validation
+    </p>
+<h2>
+     Checking the circuit with measurements
+    </h2>
+<p class="lead">
+     The oscilloscope captures are important because they show that the circuit behavior was measured, not just described. The stepped behavior is consistent with a SAR-style process: the DAC estimate changes as the register tests successive bits.
+    </p>
+<p>
+     These images should appear next to the explanation of validation because they are evidence of measured circuit behavior.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="Oscilloscope capture showing stepped SAR ADC behavior during conversion." src="assets/projects/sar/scope1.png"/>
+<figcaption class="caption">
+       Oscilloscope capture showing stepped SAR ADC behavior during conversion.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Oscilloscope capture showing another SAR ADC conversion behavior / output sequence." src="assets/projects/sar/scope2.png"/>
+<figcaption class="caption">
+       Second oscilloscope capture showing conversion/output behavior.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Key Takeaways
+    </p>
+<div class="panel">
+<ul>
+<li>
+       Connected analog voltage comparison to digital register logic.
+      </li>
+<li>
+       Used an R/2R DAC as the analog estimate inside the conversion loop.
+      </li>
+<li>
+       Validated circuit behavior using oscilloscope readings.
+      </li>
+<li>
+       Built experience with mixed-signal systems where analog and digital subsystems depend on each other.
+      </li>
+</ul>
+</div>
+</section>
+
+<section class="section project-nav-section">
+<div class="project-nav-actions">
+<a class="project-nav-btn primary" href="fm.html">Next project → <span>Superheterodyne FM Radio</span></a>
+<button class="project-nav-btn" onclick="openProjectPicker()" type="button">All projects</button>
+<a class="project-nav-btn" href="index.html">Home page</a>
+</div>
+</section>
+<div aria-hidden="true" class="project-picker-modal" id="projectPicker">
+<div class="project-picker-backdrop" onclick="closeProjectPicker()"></div>
+<div aria-label="All projects" aria-modal="true" class="project-picker-panel" role="dialog">
+<button class="project-picker-close" onclick="closeProjectPicker()" type="button">×</button>
+<p class="eyebrow">All Projects</p>
+<h2>Jump to a project</h2>
+<div class="project-picker-grid"><a href="capacitor-visualizer.html"><span>01</span>Capacitor Visualizer</a><a href="two-bit-adder.html"><span>02</span>2-Bit Adder</a><a href="counting-circuit.html"><span>03</span>Counting Circuit</a><a href="r2r-dac.html"><span>04</span>Digital-to-Analog Conversion</a><a href="555-time-machine.html"><span>05</span>555 Time Machine</a><a href="multi-bit-memory.html"><span>06</span>Multi-Bit Memory Register</a><a href="binary-game.html"><span>07</span>Binary Game</a><a href="tmp36-thermometer.html"><span>08</span>TMP36 Arduino Thermometer</a><a href="tiny-clock.html"><span>09</span>Tiny Clock I2C Scanner</a><a href="rtc-prototype.html"><span>10</span>Real Time Clock Prototype</a><a href="load-cell-scale.html"><span>11</span>Arduino Load Cell Scale</a><a href="charlieclock.html"><span>12</span>CharlieClock</a><a href="chump.html"><span>13</span>CHUMP Computer</a><a href="lidar.html"><span>14</span>2D Servo LiDAR Mapper</a><a href="traffic-light.html"><span>15</span>AVR Assembly Traffic Light</a><a href="sar.html"><span>16</span>SAR ADC</a><a href="fm.html"><span>17</span>Superheterodyne FM Radio</a><a href="double-dabble.html"><span>18</span>Double Dabble</a><a href="gray-code.html"><span>19</span>4517 Gray Code</a></div>
+</div>
+</div>
+</main>
+<script src="script.js">
+</script>
+<script data-project-nav="true">
+function openProjectPicker(){
+  document.getElementById('projectPicker')?.classList.add('open');
+}
+function closeProjectPicker(){
+  document.getElementById('projectPicker')?.classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeProjectPicker();
+});
+</script></body>
+</html>

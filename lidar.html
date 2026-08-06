@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   2D Servo LiDAR Mapper | Jett Kafka
+  </title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<nav class="nav">
+<a class="brand" href="index.html">
+     Jett Kafka
+    </a>
+<div class="nav-links">
+<a href="index.html#featured">
+      Featured
+     </a>
+<a href="index.html#timeline">
+      Timeline
+     </a>
+<a href="index.html#projects">
+      Projects
+     </a>
+<a href="index.html#contact">
+      Contact
+     </a>
+</div>
+</nav>
+</header>
+<main>
+<p style="margin-top:22px">
+<a href="index.html">
+     ← Back to portfolio
+    </a>
+</p>
+<section class="hero">
+<div>
+<p class="eyebrow">
+      2025 · Embedded Systems · PCB Design · CAD &amp; 3D Printing
+     </p>
+<h1>
+      2D Servo LiDAR Mapper
+     </h1>
+<p class="lead">
+      Designed and built a desktop LiDAR mapping system capable of scanning a real-world environment and displaying a 2D depth map on an LCD display. The system uses two servo motors to position a LiDAR sensor across horizontal and vertical axes, collecting thousands of distance measurements which are converted into a colour-coded map in real time. The project integrated mechanical design, embedded programming, PCB design, serial communication, and 3D CAD into a single finished product.
+     </p>
+<div class="tags">
+<span class="tag">
+       Arduino
+      </span>
+<span class="tag">
+       LiDAR
+      </span>
+<span class="tag">
+       Servo Control
+      </span>
+<span class="tag">
+       PCB Implementation
+      </span>
+<span class="tag">
+       CAD
+      </span>
+<span class="tag">
+       3D Printing
+      </span>
+<span class="tag">
+       System Integration
+      </span>
+</div>
+</div>
+<figure class="image-card">
+<img alt="Final assembled LiDAR mapper, rotated upright for the portfolio hero image." src="assets/projects/lidar/hero_rotated.jpeg"/>
+<figcaption class="caption">
+      Final assembled LiDAR mapper with the sensor and servo mechanism visible.
+     </figcaption>
+</figure>
+<div class="note" style="border-left:3px solid #cbd5e1;padding:10px 14px;margin:16px 0;background:#f8fafc;">
+<strong>
+      Engineering note.
+     </strong>
+     Building the enclosure required multiple design iterations. The final design balanced the sensor assembly and packaged the electronics into a single unit while maintaining smooth servo motion.
+    </div>
+</section>
+<section class="section" id="video">
+<p class="eyebrow">
+     Video Demonstration
+    </p>
+<h2>
+     Working system first
+    </h2>
+<p class="lead">
+     The demonstration shows the completed scanner operating as a real hardware project, with the LiDAR, servos, electronics, and enclosure working together.
+    </p>
+<a class="video-card video-link" href="https://www.youtube.com/watch?v=5CW1pi_hqYw" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for 2D Servo LiDAR Mapper" src="https://img.youtube.com/vi/5CW1pi_hqYw/hqdefault.jpg"/>
+<span class="play-badge">
+       ▶ Watch on YouTube
+      </span>
+</div>
+</a>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Engineering Challenge
+    </p>
+<div class="two-col">
+<div>
+<h2>
+       Turn a single distance sensor into a scanning mapper.
+      </h2>
+<p class="lead">
+       A fixed LiDAR sensor only measures distance in one direction. The main challenge was to create a controlled scanning system that could move the sensor through a defined field of view, collect distance readings at each position, and display those readings in a useful visual format.
+      </p>
+<p>
+       This required more than simply wiring a sensor to a microcontroller. The project needed embedded code for sensor acquisition and servo control, user-interface logic for selecting the scan region, a PCB to organize the hardware connections, and a 3D-printed structure to hold the sensor and servo mechanism in a repeatable position.
+      </p>
+</div>
+<div class="panel">
+<p>
+<strong>
+        Core idea:
+       </strong>
+       combine sensing, movement, display, and mechanical packaging into one finished device.
+      </p>
+<p>
+       The project is strongest as an integration project: the electrical, software, and mechanical parts all had to work together for the mapper to function.
+      </p>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Scan Setup &amp; User Interface
+    </p>
+<h2>
+     Selecting the mapping area
+    </h2>
+<p class="lead">
+     Before the scan begins, the system needs to know what region it should measure. The interface allowed the scan frame and distance-colour scale to be set before the mapper began collecting readings.
+    </p>
+<p>
+     The images below are graphics/interface screenshots, so short captions are enough. Their purpose is to show how the system defined the scan region and translated measured distances into a visual output.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="LCD setup screen used to choose the scan frame / mapping region." src="assets/projects/lidar/frame.png"/>
+<figcaption class="caption">
+       LCD setup screen used to define the scan frame.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Diagram showing the selected rectangular scan region on the LCD display." src="assets/projects/lidar/workflow.png"/>
+<figcaption class="caption">
+       Graphic showing the rectangular scan region selected by the user.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Distance-to-colour scaling concept used to control how mapped distances appear visually." src="assets/projects/lidar/range.png"/>
+<figcaption class="caption">
+       Distance-to-colour scale used to visually distinguish closer and farther readings.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     How It Works
+    </p>
+<div class="two-col">
+<div>
+<h2>
+       Coordinating movement and measurement
+      </h2>
+<p class="lead">
+       The LiDAR sensor provides distance readings, while the servo system changes the direction of the sensor. By taking a measurement, moving the sensor, and repeating the process across a chosen frame, the system builds up a two-dimensional representation of distance across the selected field of view.
+      </p>
+<p>
+       The key engineering issue is synchronization. If the software reads the sensor before the servo reaches the correct position, the data becomes less meaningful. If the scan is too slow, the system feels inefficient. The project therefore depended on timing control, repeatable servo positioning, and clean communication between the sensor and controller.
+      </p>
+</div>
+<div class="panel">
+<p>
+<strong>
+        Subsystems involved:
+       </strong>
+</p>
+<ul>
+<li>
+        TF Mini Plus LiDAR for distance measurement
+       </li>
+<li>
+        Servo motors for positioning
+       </li>
+<li>
+        Arduino-based control logic
+       </li>
+<li>
+        LCD/user interface for setup and output
+       </li>
+<li>
+        PCB and wiring harness for hardware integration
+       </li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Mechanical Design &amp; 3D Printing
+    </p>
+<h2>
+     Designing the physical scanner
+    </h2>
+<p class="lead">
+     The enclosure and mounting system were not just cosmetic. They were part of the function of the device because the LiDAR sensor needed to stay aligned with the servo-driven mechanism.
+    </p>
+<p>
+     For mechanical and enclosure images, the page can be more visual. These images show the packaging and mounting solution clearly, so the captions focus on what each part contributes to the final assembly.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="3D CAD view of the main enclosure/base section." src="assets/projects/lidar/enclosure1.png"/>
+<figcaption class="caption">
+       CAD view of the main enclosure/base section.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="3D CAD view of the servo arm and mounting components." src="assets/projects/lidar/enclosure2.png"/>
+<figcaption class="caption">
+       CAD view of the servo arm and mounting hardware.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Final top assembly showing the LiDAR module mounted to the servo-driven mechanism." src="assets/projects/lidar/assembly.png"/>
+<figcaption class="caption">
+       Final top assembly with the LiDAR mounted to the servo-driven mechanism.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     PCB &amp; Internal Integration
+    </p>
+<h2>
+     Moving from loose wiring toward a finished device
+    </h2>
+<p class="lead">
+     After proving the system concept, the project was packaged into a more complete hardware build. The PCB helped organize connections between the Arduino, buttons, potentiometer, display, sensor, and servo hardware.
+    </p>
+<p>
+     The PCB stage moved the project beyond a temporary breadboard-style prototype. Reducing loose wiring made the system cleaner, easier to assemble, and more reliable as a finished engineering device.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="Interior view of the final enclosure showing electronics mounted inside; the PCB is mounted on the side wall with screws." src="assets/projects/lidar/interior.png"/>
+<figcaption class="caption">
+       Interior of the final enclosure showing the electronics mounted inside.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="PCB design/schematic view for the LiDAR mapper interface board." src="assets/projects/lidar/pcbdesign.png"/>
+<figcaption class="caption">
+       PCB design/schematic view for the LiDAR mapper interface board.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Front side of the fabricated PCB with user-interface components mounted." src="assets/projects/lidar/pcbfront.png"/>
+<figcaption class="caption">
+       Front side of the fabricated PCB with user-interface components.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Back side of the fabricated PCB with Arduino/header connections." src="assets/projects/lidar/pcbback.png"/>
+<figcaption class="caption">
+       Back side of the fabricated PCB with Arduino/header connections.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Key Takeaways
+    </p>
+<div class="panel">
+<ul>
+<li>
+       Integrated LiDAR sensing, servo movement, LCD interface logic, PCB wiring, and mechanical packaging.
+      </li>
+<li>
+       Progressed from system concept and interface design to PCB and final enclosure.
+      </li>
+<li>
+       Used CAD and 3D printing to solve alignment and packaging constraints.
+      </li>
+<li>
+       Gained experience thinking about the full hardware product, not just the circuit.
+      </li>
+</ul>
+</div>
+</section>
+
+<section class="section project-nav-section">
+<div class="project-nav-actions">
+<a class="project-nav-btn primary" href="traffic-light.html">Next project → <span>AVR Assembly Traffic Light</span></a>
+<button class="project-nav-btn" onclick="openProjectPicker()" type="button">All projects</button>
+<a class="project-nav-btn" href="index.html">Home page</a>
+</div>
+</section>
+<div aria-hidden="true" class="project-picker-modal" id="projectPicker">
+<div class="project-picker-backdrop" onclick="closeProjectPicker()"></div>
+<div aria-label="All projects" aria-modal="true" class="project-picker-panel" role="dialog">
+<button class="project-picker-close" onclick="closeProjectPicker()" type="button">×</button>
+<p class="eyebrow">All Projects</p>
+<h2>Jump to a project</h2>
+<div class="project-picker-grid"><a href="capacitor-visualizer.html"><span>01</span>Capacitor Visualizer</a><a href="two-bit-adder.html"><span>02</span>2-Bit Adder</a><a href="counting-circuit.html"><span>03</span>Counting Circuit</a><a href="r2r-dac.html"><span>04</span>Digital-to-Analog Conversion</a><a href="555-time-machine.html"><span>05</span>555 Time Machine</a><a href="multi-bit-memory.html"><span>06</span>Multi-Bit Memory Register</a><a href="binary-game.html"><span>07</span>Binary Game</a><a href="tmp36-thermometer.html"><span>08</span>TMP36 Arduino Thermometer</a><a href="tiny-clock.html"><span>09</span>Tiny Clock I2C Scanner</a><a href="rtc-prototype.html"><span>10</span>Real Time Clock Prototype</a><a href="load-cell-scale.html"><span>11</span>Arduino Load Cell Scale</a><a href="charlieclock.html"><span>12</span>CharlieClock</a><a href="chump.html"><span>13</span>CHUMP Computer</a><a href="lidar.html"><span>14</span>2D Servo LiDAR Mapper</a><a href="traffic-light.html"><span>15</span>AVR Assembly Traffic Light</a><a href="sar.html"><span>16</span>SAR ADC</a><a href="fm.html"><span>17</span>Superheterodyne FM Radio</a><a href="double-dabble.html"><span>18</span>Double Dabble</a><a href="gray-code.html"><span>19</span>4517 Gray Code</a></div>
+</div>
+</div>
+</main>
+<script src="script.js">
+</script>
+<script data-project-nav="true">
+function openProjectPicker(){
+  document.getElementById('projectPicker')?.classList.add('open');
+}
+function closeProjectPicker(){
+  document.getElementById('projectPicker')?.classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeProjectPicker();
+});
+</script></body>
+</html>

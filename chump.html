@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   CHUMP Computer | Jett Kafka
+  </title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<nav class="nav">
+<a class="brand" href="index.html">
+     Jett Kafka
+    </a>
+<div class="nav-links">
+<a href="index.html#featured">
+      Featured
+     </a>
+<a href="index.html#timeline">
+      Timeline
+     </a>
+<a href="index.html#projects">
+      Projects
+     </a>
+<a href="index.html#contact">
+      Contact
+     </a>
+</div>
+</nav>
+</header>
+<main>
+<p style="margin-top:22px">
+<a href="index.html">
+     ← Back to portfolio
+    </a>
+</p>
+<section class="hero">
+<div>
+<p class="eyebrow">
+      2025 · Computer Architecture · Digital Logic
+     </p>
+<h1>
+      CHUMP Computer
+     </h1>
+<p class="lead">
+      A multi-stage build of a breadboard-based 4-bit computer using clock and counter logic, EEPROM program storage, control ROM, an arithmetic logic unit, RAM, registers, and a final integrated hardware system.
+     </p>
+<div class="tags">
+<span class="tag">
+       Computer Architecture
+      </span>
+<span class="tag">
+       Digital Logic
+      </span>
+<span class="tag">
+       EEPROM
+      </span>
+<span class="tag">
+       ALU
+      </span>
+<span class="tag">
+       Breadboarding
+      </span>
+<span class="tag">
+       Debugging
+      </span>
+<span class="tag">
+       System Integration
+      </span>
+</div>
+</div>
+<figure class="image-card">
+<img alt="Completed CHUMP computer final build." src="assets/projects/chump/hero.png"/>
+<figcaption class="caption">
+      Completed CHUMP build with the main computer occupying the lower breadboards and the user-aiding display positioned above it.
+     </figcaption>
+</figure>
+<div class="note" style="border-left:3px solid #cbd5e1;padding:10px 14px;margin:16px 0;background:#f8fafc;">
+<strong>
+      Engineering note.
+     </strong>
+     A major challenge was moving from independently working subsystems to a complete computer. Wiring complexity and system integration became significantly more difficult as additional modules were connected together.
+    </div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Master Project
+    </p>
+<h2>
+     Five build milestones
+    </h2>
+<p class="lead">
+     CHUMP is best understood as one large computer architecture project rather than a collection of isolated assignments. Each stage added a required subsystem: timing, program memory, arithmetic hardware, system-level data flow, and final integration.
+    </p>
+<p>
+     CHUMP is split up into 5 parts:
+    </p>
+<ul class="milestone-list">
+<li>
+<strong>
+       Part 1: Clock &amp; Counter
+      </strong>
+<br/>
+      Timing signals, manual stepping, and program count control.
+     </li>
+<li>
+<strong>
+       Part 2: Program EEPROM
+      </strong>
+<br/>
+      Stored programs and EEPROM programming hardware.
+     </li>
+<li>
+<strong>
+       Part 3: ALU
+      </strong>
+<br/>
+      Arithmetic and logical operations using the 74LS181.
+     </li>
+<li>
+<strong>
+       Part 4: Architecture Integration
+      </strong>
+<br/>
+      Program ROM, control ROM, RAM, MUX, accumulator, and address logic.
+     </li>
+<li>
+<strong>
+       Part 5: Final Build
+      </strong>
+<br/>
+      Full CHUMP wiring, demonstration programs, and user display.
+     </li>
+</ul>
+</section>
+<section class="section" id="video">
+<p class="eyebrow">
+     Project Video 
+    </p>
+<h2>
+     Project Demonstrations
+    </h2>
+<p class="lead">
+     Note: The video below is the final video for the project, however each part has its own video within its section.
+    </p>
+<div class="video-row">
+<div class="video-mini">
+<a class="video-card video-link" href="https://youtu.be/BK6yfr8a3aM" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for CHUMP Final Build" src="https://img.youtube.com/vi/BK6yfr8a3aM/hqdefault.jpg"/>
+<span class="play-badge">
+         ▶ Watch on YouTube
+        </span>
+</div>
+</a>
+<div class="card-body">
+<h3>
+        Final Build: Complete CHUMP demonstration
+       </h3>
+<p class="small">
+        Demonstrates the integrated computer and its final project features.
+       </p>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+       Engineering Challenge
+      </p>
+<div class="two-col">
+<div>
+<h2>
+         Build a computer from visible hardware.
+        </h2>
+<p class="lead">
+         The project breaks a computer into physical subsystems that can be wired, tested, and debugged individually: clock generation, program counting, instruction storage, control decoding, arithmetic/logic operations, RAM access, and data movement.
+        </p>
+<p>
+         Unlike software-only computer architecture exercises, this build exposes timing, enable pins, address lines, data buses, and control signals directly on the breadboard. The result is a computer that can run short programs while making the underlying hardware behavior visible.
+        </p>
+</div>
+<div class="callout">
+<h3>
+         What made CHUMP difficult
+        </h3>
+<ul class="evidence-list">
+<li>
+          Multiple IC families and subsystems had to behave correctly at the same time.
+         </li>
+<li>
+          EEPROM address pins, output enable, and write enable behavior had to be controlled precisely.
+         </li>
+<li>
+          The final machine required clean wiring and staged debugging because a single floating input or bad gate could break the system.
+         </li>
+<li>
+          The final build added an extra user display that used persistence of vision and synchronized timing logic.
+         </li>
+</ul>
+</div>
+</div>
+</section>
+<section class="chapter" id="part1">
+<div class="chapter-head">
+<div>
+<span class="meta">
+         Part 1
+        </span>
+</div>
+<div>
+<h2>
+         Clock &amp; Counter
+        </h2>
+<p class="lead">
+         The first stage created the timing and program-count foundation for the computer. The system could advance automatically with an astable clock, advance manually with a debounced button, or be halted/overridden for debugging.
+        </p>
+</div>
+</div>
+<p>
+       The clock/counter stage used three 555 timers: one for the astable clock, one to debounce a pushbutton, and one to stabilize the select switch. NAND gate logic selected between the automatic and manual clock paths, while a halt feature allowed the output to freeze. The resulting clock output drove a 74LS161 4-bit counter, giving the project a controllable program counter from 0 to 15.
+      </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="CHUMP clock and counter breadboard prototype." src="assets/projects/chump/clockbreadboard.jpeg"/>
+<figcaption class="caption">
+         Clock and counter breadboard prototype with 555 timers, NAND logic, user controls, and LED outputs.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Clock and counter control diagram." src="assets/projects/chump/clockdiagram.png"/>
+<figcaption class="caption">
+         Clock selection diagram showing how the manual/automatic clock source feeds the 4-bit counter.
+        </figcaption>
+</figure>
+</div>
+<div style="margin-top:22px">
+<a class="video-card video-link" href="https://youtu.be/ovKclNDVrDE" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for CHUMP Clock and Counter" src="https://img.youtube.com/vi/ovKclNDVrDE/hqdefault.jpg"/>
+<span class="play-badge">
+          ▶ Watch on YouTube
+         </span>
+</div>
+</a>
+</div>
+<span class="completion">
+       ✓ Part 1 Video
+      </span>
+</section>
+<br/>
+<br/>
+<section class="chapter" id="part2">
+<div class="chapter-head">
+<div>
+<span class="meta">
+         Part 2
+        </span>
+</div>
+<div>
+<h2>
+         Program EEPROM &amp; Programmer
+        </h2>
+<p class="lead">
+         The second stage added stored program behavior. The AT28C16 EEPROM allowed the 4-bit program counter output to select bytes of stored instruction data, turning the hardware from a counter into the beginning of a programmable system.
+        </p>
+</div>
+</div>
+<p>
+       The EEPROM stores bytes that can be read from a selected address. In the CHUMP build, the 4-bit counter connects to the lower address pins so the computer can step through a 16-line program. A switch can select between stored program regions, allowing different CHUMP programs to be demonstrated without rebuilding the circuit.
+      </p>
+<p>
+       The EEPROM programmer was built separately using an Arduino Nano and 74HC595 shift registers. Because the Nano does not have enough pins to directly drive the full EEPROM address/data interface, the programmer shifts address bits through the 595 chips, then pulses write enable to store each byte. The programmer code included functions for setting addresses, reading bytes, writing bytes, erasing memory, and printing EEPROM contents in 16-byte rows.
+      </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="EEPROM integration media for CHUMP." src="assets/projects/chump/eeprombreadboard.gif"/>
+<figcaption class="caption">
+         EEPROM integration showing program memory connected into the CHUMP counter/output flow.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="EEPROM programmer breadboard." src="assets/projects/chump/programmer.png"/>
+<figcaption class="caption">
+         Arduino Nano EEPROM programmer breadboard using shift-register control.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="EEPROM programmer PCB design." src="assets/projects/chump/programmerpcb.png"/>
+<figcaption class="caption">
+         PCB layout created for a more permanent EEPROM programmer.
+        </figcaption>
+</figure>
+</div>
+<p>
+       The hardest bug in this stage came from EEPROM address pins floating when they were off. The outputs would temporarily read HIGH after power-up and then become inconsistent. Grounding the inactive address pins fixed the issue and made the EEPROM behavior stable.
+      </p>
+<div style="margin-top:22px">
+<a class="video-card video-link" href="https://youtu.be/B3-OZWdzoSQ" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for CHUMP Program EEPROM" src="https://img.youtube.com/vi/B3-OZWdzoSQ/hqdefault.jpg"/>
+<span class="play-badge">
+          ▶ Watch on YouTube
+         </span>
+</div>
+</a>
+</div>
+<span class="completion">
+       ✓ Part 2 Video
+      </span>
+</section>
+<br/>
+<br/>
+<section class="chapter" id="part3">
+<div class="chapter-head">
+<div>
+<span class="meta">
+         Part 3
+        </span>
+</div>
+<div>
+<h2>
+         Arithmetic Logic Unit
+        </h2>
+<p class="lead">
+         The third stage focused on the ALU, the subsystem responsible for manipulating data. The 74LS181 performs arithmetic and logic operations on two 4-bit inputs and produces a 4-bit output.
+        </p>
+</div>
+</div>
+<p>
+       The ALU tester used switch banks to manually set the A input, B input, select lines, carry-in, and mode control. The select lines choose one of sixteen possible functions, while the mode control pin switches between logic operations and arithmetic operations. With carry-in enabled for arithmetic mode, the chip can access additional variations of the arithmetic functions.
+      </p>
+<p>
+       This stage made the computer’s data-processing core tangible. Instead of seeing arithmetic as a software abstraction, the project showed how select lines and control inputs physically determine the output of a logic/arithmetic chip.
+      </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="ALU breadboard prototype." src="assets/projects/chump/alubreadboard.jpeg"/>
+<figcaption class="caption">
+         ALU tester breadboard with switch-bank inputs and bar-graph output indicators.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="CHUMP architecture diagram showing ALU and related subsystems." src="assets/projects/chump/architecture.png"/>
+<figcaption class="caption">
+         CHUMP architecture diagram showing where the ALU fits with RAM, accumulator, address logic, program counter, and program ROM.
+        </figcaption>
+</figure>
+</div>
+<p>
+       The physical layout also required careful labeling and visual organization. Morland bar graphs and 3D-designed covers were used to make the inputs and outputs readable during testing.
+      </p>
+<div style="margin-top:22px">
+<a class="video-card video-link" href="https://youtu.be/4ph6ix--JFw" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for CHUMP ALU" src="https://img.youtube.com/vi/4ph6ix--JFw/hqdefault.jpg"/>
+<span class="play-badge">
+          ▶ Watch on YouTube
+         </span>
+</div>
+</a>
+</div>
+<span class="completion">
+       ✓ Part 3 Video
+      </span>
+</section>
+<br/>
+<br/>
+<section class="chapter" id="part4">
+<div class="chapter-head">
+<div>
+<span class="meta">
+         Part 4
+        </span>
+</div>
+<div>
+<h2>
+         Architecture Integration
+        </h2>
+<p class="lead">
+         The final CHUMP architecture combined the program counter, program ROM, control ROM, multiplexer, ALU, accumulator, RAM, and address register into one data-flow system.
+        </p>
+</div>
+</div>
+<p>
+       The program counter selects the current line of the program. Its 4-bit output drives the program ROM, which returns an 8-bit instruction. The instruction is divided into two nibbles: the high nibble acts as the opcode, and the low nibble acts as the constant value. The opcode selects a control-ROM address, and the control ROM outputs the enable/load/reset signals that determine what the computer does during that instruction.
+      </p>
+<p>
+       The multiplexer decides whether the ALU receives a constant from the program ROM or a value retrieved from memory. The accumulator stores the ALU output so that a result can be held across instructions, written to RAM, or fed back into the ALU for multi-step operations. RAM is used for storage, while the address register makes memory-based instructions possible by preserving which RAM address should be accessed.
+      </p>
+<div class="wide-image">
+<figure class="image-card">
+<img alt="Complete CHUMP architecture diagram." src="assets/projects/chump/architecture.png"/>
+<figcaption class="caption">
+         System architecture showing the interaction between program ROM, control ROM, MUX, ALU, accumulator, RAM, address register, and program counter.
+        </figcaption>
+</figure>
+</div>
+<div class="callout">
+<br/>
+<h3>
+        Instruction examples
+       </h3>
+<p>
+        CHUMP can execute instructions such as LOAD, READ, ADD/SUBTRACT, STORETO, and GOTO. For example, GOTO loads a new value into the program counter so the 16-line loop can jump back to the beginning or skip an initial setup section. Memory instructions require a READ step first, allowing a RAM address to be stored before an IT-style operation retrieves the value from that address.
+       </p>
+</div>
+<span class="completion">
+</span>
+</section>
+<br/>
+<br/>
+<section class="chapter" id="part5">
+<div class="chapter-head">
+<div>
+<span class="meta">
+         Part 5
+        </span>
+</div>
+<div>
+<h2>
+         Final Build &amp; User Display
+        </h2>
+<p class="lead">
+         The completed CHUMP used the bottom three breadboards for the computer itself, with a user-aiding display on the top breadboard to make the active instruction easier to read.
+        </p>
+</div>
+</div>
+<p>
+       The final computer could run 16-line CHUMP programs that read, manipulate, and write data to RAM. Example programs included a counter-style loop, a program to swap two RAM addresses, and a loop that alternated a preprogrammed 4-bit output. The control ROM only needed to be programmed once; changing program behavior mainly required changing the program ROM.
+      </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="CHUMP final breadboard build." src="assets/projects/chump/finalbuild.jpeg"/>
+<figcaption class="caption">
+         Final CHUMP breadboard system with labelled subsystems.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Completed CHUMP project build." src="assets/projects/chump/hero.png"/>
+<figcaption class="caption">
+         Completed CHUMP project build with the user display above the main computer hardware.
+        </figcaption>
+</figure>
+</div>
+<p>
+       The user display was an additional hardware logic feature. It used one EEPROM and persistence of vision to display the first four letters of an instruction across four seven-segment displays. A ring counter selected which digit was active, while a small program counter selected which EEPROM byte should appear. The opcode shifted into the EEPROM address range selected the instruction word to display.
+      </p>
+<p>
+       This display was intentionally more efficient than using four separate EEPROMs, but it introduced a difficult synchronization problem. If timing drifted, the letters could shift and show an incorrect sequence, such as “EADR” instead of “READ.” Even with that limitation, it demonstrated a hardware-based display system built from earlier digital logic concepts.
+      </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="EEPROM programmer PCB image." src="assets/projects/chump/programmerpcb2.png"/>
+<figcaption class="caption">
+         Additional EEPROM programmer PCB work connected to the CHUMP development process.
+        </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="EEPROM programmer PCB layout." src="assets/projects/chump/programmerpcb.png"/>
+<figcaption class="caption">
+         PCB layout for making the EEPROM programmer more permanent.
+        </figcaption>
+</figure>
+</div>
+<span class="completion">
+</span>
+</section>
+<section class="section">
+<p class="eyebrow">
+       Key Takeaways
+      </p>
+<div class="two-col">
+<div>
+<h2>
+         What this project demonstrates
+        </h2>
+<p class="lead">
+         CHUMP shows a full progression from smaller digital subsystems to an integrated computer architecture project.
+        </p>
+</div>
+<div class="panel">
+<ul>
+<li>
+          Designed and debugged timing, memory, arithmetic, and control subsystems.
+         </li>
+<li>
+          Worked with 555 timers, NAND logic, 74LS161 counters, AT28C16 EEPROMs, 74HC595 shift registers, 74LS181 ALU hardware, RAM, registers, and seven-segment display logic.
+         </li>
+<li>
+          Built an EEPROM programmer using Arduino Nano control and shift-register address expansion.
+         </li>
+<li>
+          Integrated program ROM, control ROM, ALU, accumulator, RAM, and address logic into a working computer structure.
+         </li>
+<li>
+          Documented and demonstrated the project through multiple videos, custom diagrams, and staged testing.
+         </li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section project-nav-section">
+<div class="project-nav-actions">
+<a class="project-nav-btn primary" href="lidar.html">Next project → <span>2D Servo LiDAR Mapper</span></a>
+<button class="project-nav-btn" onclick="openProjectPicker()" type="button">All projects</button>
+<a class="project-nav-btn" href="index.html">Home page</a>
+</div>
+</section>
+<div aria-hidden="true" class="project-picker-modal" id="projectPicker">
+<div class="project-picker-backdrop" onclick="closeProjectPicker()"></div>
+<div aria-label="All projects" aria-modal="true" class="project-picker-panel" role="dialog">
+<button class="project-picker-close" onclick="closeProjectPicker()" type="button">×</button>
+<p class="eyebrow">All Projects</p>
+<h2>Jump to a project</h2>
+<div class="project-picker-grid"><a href="capacitor-visualizer.html"><span>01</span>Capacitor Visualizer</a><a href="two-bit-adder.html"><span>02</span>2-Bit Adder</a><a href="counting-circuit.html"><span>03</span>Counting Circuit</a><a href="r2r-dac.html"><span>04</span>Digital-to-Analog Conversion</a><a href="555-time-machine.html"><span>05</span>555 Time Machine</a><a href="multi-bit-memory.html"><span>06</span>Multi-Bit Memory Register</a><a href="binary-game.html"><span>07</span>Binary Game</a><a href="tmp36-thermometer.html"><span>08</span>TMP36 Arduino Thermometer</a><a href="tiny-clock.html"><span>09</span>Tiny Clock I2C Scanner</a><a href="rtc-prototype.html"><span>10</span>Real Time Clock Prototype</a><a href="load-cell-scale.html"><span>11</span>Arduino Load Cell Scale</a><a href="charlieclock.html"><span>12</span>CharlieClock</a><a href="chump.html"><span>13</span>CHUMP Computer</a><a href="lidar.html"><span>14</span>2D Servo LiDAR Mapper</a><a href="traffic-light.html"><span>15</span>AVR Assembly Traffic Light</a><a href="sar.html"><span>16</span>SAR ADC</a><a href="fm.html"><span>17</span>Superheterodyne FM Radio</a><a href="double-dabble.html"><span>18</span>Double Dabble</a><a href="gray-code.html"><span>19</span>4517 Gray Code</a></div>
+</div>
+</div>
+</main>
+<script src="script.js">
+</script>
+<script data-project-nav="true">
+function openProjectPicker(){
+  document.getElementById('projectPicker')?.classList.add('open');
+}
+function closeProjectPicker(){
+  document.getElementById('projectPicker')?.classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeProjectPicker();
+});
+</script></body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   Superheterodyne FM Radio | Jett Kafka
+  </title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<nav class="nav">
+<a class="brand" href="index.html">
+     Jett Kafka
+    </a>
+<div class="nav-links">
+<a href="index.html#featured">
+      Featured
+     </a>
+<a href="index.html#timeline">
+      Timeline
+     </a>
+<a href="index.html#projects">
+      Projects
+     </a>
+<a href="index.html#contact">
+      Contact
+     </a>
+</div>
+</nav>
+</header>
+<main>
+<p style="margin-top:22px">
+<a href="index.html">
+     ← Back to portfolio
+    </a>
+</p>
+<section class="hero">
+<div>
+<p class="eyebrow">
+      2025 · RF &amp; Communications
+     </p>
+<h1>
+      Superheterodyne FM Radio
+     </h1>
+<p class="lead">
+      A long-form RF project focused on understanding the superheterodyne receiver architecture, including antennas, bandpass filtering, RF amplification, mixing, local oscillation, IF filtering, demodulation, and audio output.
+     </p>
+<div class="tags">
+<span class="tag">
+       RF
+      </span>
+<span class="tag">
+       Communications
+      </span>
+<span class="tag">
+       Filters
+      </span>
+<span class="tag">
+       Amplifiers
+      </span>
+<span class="tag">
+       Mixers
+      </span>
+<span class="tag">
+       Oscillators
+      </span>
+<span class="tag">
+       Signal Chain
+      </span>
+</div>
+</div>
+<figure class="image-card">
+<img alt="Block diagram of the superheterodyne FM receiver signal chain from antenna through audio output." src="assets/projects/fm/hero.png"/>
+<figcaption class="caption">
+      Block diagram of the superheterodyne FM receiver signal chain from antenna through audio output.
+     </figcaption>
+</figure>
+<div class="note" style="border-left:3px solid #cbd5e1;padding:10px 14px;margin:16px 0;background:#f8fafc;">
+<strong>
+      Engineering note.
+     </strong>
+     The receiver was developed as a chain of smaller subsystems. Verifying each stage individually made it easier to isolate issues before integrating the complete signal path.
+    </div>
+</section>
+<section class="section" id="video">
+<p class="eyebrow">
+     Video Demonstration
+    </p>
+<h2>
+     RF project demonstration
+    </h2>
+<p class="lead">
+     The demonstration shows the RF receiver as a physical build, connecting the theory-heavy signal chain to actual hardware testing.
+    </p>
+<a class="video-card video-link" href="https://www.youtube.com/watch?v=YH62wd6PXxI" rel="noopener" target="_blank">
+<div class="video-thumb">
+<img alt="YouTube thumbnail for Superheterodyne FM Radio" src="https://img.youtube.com/vi/YH62wd6PXxI/hqdefault.jpg"/>
+<span class="play-badge">
+       ▶ Watch on YouTube
+      </span>
+</div>
+</a>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Engineering Challenge
+    </p>
+<div class="two-col">
+<div>
+<h2>
+       Follow an FM signal through a receiver signal chain.
+      </h2>
+<p class="lead">
+       A superheterodyne receiver is built around a sequence of RF and analog stages. The incoming radio signal is captured by an antenna, filtered, amplified, mixed with a local oscillator, shifted to an intermediate frequency, filtered again, demodulated, and finally converted into audio output.
+      </p>
+<p>
+       This project is different from the other featured pages because much of the value is in understanding the signal path. The images should therefore be used as explanatory diagrams for each receiver stage, not as random media.
+      </p>
+</div>
+<div class="panel">
+<p>
+<strong>
+        Portfolio note:
+       </strong>
+       this page intentionally uses fewer unsupported build claims. Images are paired only with the subsystem they actually illustrate.
+      </p>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Signal Chain Overview
+    </p>
+<h2>
+     Why superheterodyne architecture is useful
+    </h2>
+<p class="lead">
+     Instead of trying to process the received RF signal directly at its original carrier frequency, a superheterodyne receiver uses a mixer and local oscillator to shift the signal to a more convenient intermediate frequency. This makes filtering and demodulation more manageable.
+    </p>
+<p>
+     The receiver was built as a signal chain, where each stage prepares the signal for the next one. Starting with the full block diagram makes it easier to understand why the antenna, filter, amplifier, mixer, oscillator, IF stage, demodulator, and audio output were treated as separate subsystems.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="Block diagram of the superheterodyne FM receiver signal chain from antenna through audio output." src="assets/projects/fm/hero.png"/>
+<figcaption class="caption">
+       Overall receiver signal chain: antenna, filtering, amplification, mixing, IF stage, demodulation, and audio.
+      </figcaption>
+</figure>
+<div class="panel">
+<p>
+<strong>
+        High-level process:
+       </strong>
+</p>
+<ol>
+<li>
+        Receive the RF signal.
+       </li>
+<li>
+        Select the desired frequency range.
+       </li>
+<li>
+        Amplify weak signals.
+       </li>
+<li>
+        Mix with a local oscillator.
+       </li>
+<li>
+        Filter/amplify at the intermediate frequency.
+       </li>
+<li>
+        Demodulate and output audio.
+       </li>
+</ol>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Antenna &amp; Input Signal
+    </p>
+<h2>
+     Capturing the radio signal
+    </h2>
+<p class="lead">
+     The antenna is the front end of the receiver. Its job is to pick up electromagnetic waves and turn them into an electrical signal that can be processed by the rest of the circuit.
+    </p>
+<p>
+     The antenna stage brought the received RF signal into the test setup through a breadboard-compatible connection, allowing the rest of the receiver chain to process the signal.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="Photo of the antenna used to pick up electromagnetic waves for the project." src="assets/projects/fm/antenna.png"/>
+<figcaption class="caption">
+       Antenna used to pick up electromagnetic waves for the project.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="F-type connector media used to connect the antenna output into a breadboard-compatible setup." src="assets/projects/fm/connector.png"/>
+<figcaption class="caption">
+       F-type connector used to connect the antenna output into the test setup.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Oscilloscope comparison showing antenna pickup behavior." src="assets/projects/fm/antennascope1.png"/>
+<figcaption class="caption">
+       Oscilloscope comparison showing antenna pickup behavior.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Bandpass Filtering
+    </p>
+<h2>
+     Selecting the useful frequency range
+    </h2>
+<p class="lead">
+     After the antenna, the receiver needs a way to focus on the desired frequency range and reject signals outside that range. This is where the bandpass filter becomes important.
+    </p>
+<p>
+     Inductive and capacitive reactance change in opposite directions as frequency changes. The bandpass stage uses that frequency-dependent behavior to pass a selected band of signals while reducing unwanted frequencies outside the target range.
+    </p>
+<div class="grid-2">
+<figure class="image-card">
+<img alt="Graph showing how capacitive and inductive reactance vary with frequency around resonance." src="assets/projects/fm/reactance.png"/>
+<figcaption class="caption">
+       Reactance graph used to explain resonance and frequency-dependent behavior.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Bandpass response diagram used to explain how a desired frequency range is selected." src="assets/projects/fm/bandpass.png"/>
+<figcaption class="caption">
+       Bandpass response showing the selected frequency range.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     RF Amplifier, Mixer &amp; Local Oscillator
+    </p>
+<h2>
+     Strengthening and shifting the signal
+    </h2>
+<p class="lead">
+     Once the desired RF signal has been selected, the receiver needs to amplify it and then shift it to the intermediate frequency. The mixer combines the received signal with a local oscillator signal, producing new frequency components that can be filtered into the IF stage.
+    </p>
+<p>
+     These diagrams are included because they explain different parts of the receiver chain: amplification, mixing, and oscillation.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="Common-emitter / amplifier schematic from the RF amplifier theory section." src="assets/projects/fm/rfamp.png"/>
+<figcaption class="caption">
+       RF amplifier schematic/theory graphic.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Mixer block diagram showing RF input, local oscillator input, and output." src="assets/projects/fm/mixer.png"/>
+<figcaption class="caption">
+       Mixer block diagram showing RF input, local oscillator input, and output.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="LC oscillator schematic from the local oscillator theory section." src="assets/projects/fm/localosc.png"/>
+<figcaption class="caption">
+       LC oscillator schematic from the local oscillator section.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     IF Stage, Demodulation &amp; Audio
+    </p>
+<h2>
+     Recovering the information and producing sound
+    </h2>
+<p class="lead">
+     After mixing, the receiver works at an intermediate frequency. This makes it easier to filter and amplify consistently. The demodulator then extracts the information from the FM signal so it can eventually be converted into audio output.
+    </p>
+<p>
+     The final images are mostly conceptual subsystem graphics, so they are kept concise and placed directly in the section where those subsystems are explained.
+    </p>
+<div class="grid-3">
+<figure class="image-card">
+<img alt="Formula/diagram media from the IF filter and amplifier section." src="assets/projects/fm/ifstage.png"/>
+<figcaption class="caption">
+       IF filter/amplifier media from the DER section.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Demodulator diagram showing IF input, phase-shifted input, and mixer-based output concept." src="assets/projects/fm/demod.png"/>
+<figcaption class="caption">
+       Demodulator diagram showing the concept of extracting the signal information.
+      </figcaption>
+</figure>
+<figure class="image-card">
+<img alt="Speaker / audio output media from the audio amplifier and speaker section." src="assets/projects/fm/audio.png"/>
+<figcaption class="caption">
+       Speaker/audio output media from the final audio stage.
+      </figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     Key Takeaways
+    </p>
+<div class="panel">
+<ul>
+<li>
+       Studied the full superheterodyne signal chain from antenna input to audio output.
+      </li>
+<li>
+       Connected RF concepts like filtering, mixing, oscillation, and demodulation into one receiver architecture.
+      </li>
+<li>
+       Built conceptual overlap with RF communication systems used in rocketry and telemetry.
+      </li>
+<li>
+       Improved ability to explain complex systems as a sequence of functional blocks.
+      </li>
+</ul>
+</div>
+</section>
+
+<section class="section project-nav-section">
+<div class="project-nav-actions">
+<a class="project-nav-btn primary" href="double-dabble.html">Next project → <span>Double Dabble</span></a>
+<button class="project-nav-btn" onclick="openProjectPicker()" type="button">All projects</button>
+<a class="project-nav-btn" href="index.html">Home page</a>
+</div>
+</section>
+<div aria-hidden="true" class="project-picker-modal" id="projectPicker">
+<div class="project-picker-backdrop" onclick="closeProjectPicker()"></div>
+<div aria-label="All projects" aria-modal="true" class="project-picker-panel" role="dialog">
+<button class="project-picker-close" onclick="closeProjectPicker()" type="button">×</button>
+<p class="eyebrow">All Projects</p>
+<h2>Jump to a project</h2>
+<div class="project-picker-grid"><a href="capacitor-visualizer.html"><span>01</span>Capacitor Visualizer</a><a href="two-bit-adder.html"><span>02</span>2-Bit Adder</a><a href="counting-circuit.html"><span>03</span>Counting Circuit</a><a href="r2r-dac.html"><span>04</span>Digital-to-Analog Conversion</a><a href="555-time-machine.html"><span>05</span>555 Time Machine</a><a href="multi-bit-memory.html"><span>06</span>Multi-Bit Memory Register</a><a href="binary-game.html"><span>07</span>Binary Game</a><a href="tmp36-thermometer.html"><span>08</span>TMP36 Arduino Thermometer</a><a href="tiny-clock.html"><span>09</span>Tiny Clock I2C Scanner</a><a href="rtc-prototype.html"><span>10</span>Real Time Clock Prototype</a><a href="load-cell-scale.html"><span>11</span>Arduino Load Cell Scale</a><a href="charlieclock.html"><span>12</span>CharlieClock</a><a href="chump.html"><span>13</span>CHUMP Computer</a><a href="lidar.html"><span>14</span>2D Servo LiDAR Mapper</a><a href="traffic-light.html"><span>15</span>AVR Assembly Traffic Light</a><a href="sar.html"><span>16</span>SAR ADC</a><a href="fm.html"><span>17</span>Superheterodyne FM Radio</a><a href="double-dabble.html"><span>18</span>Double Dabble</a><a href="gray-code.html"><span>19</span>4517 Gray Code</a></div>
+</div>
+</div>
+</main>
+<script src="script.js">
+</script>
+<script data-project-nav="true">
+function openProjectPicker(){
+  document.getElementById('projectPicker')?.classList.add('open');
+}
+function closeProjectPicker(){
+  document.getElementById('projectPicker')?.classList.remove('open');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeProjectPicker();
+});
+</script></body>
+</html>
